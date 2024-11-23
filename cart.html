@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Cart</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<style>
+		body {
+			opacity: 0;
+		}
+	</style>
+	<link rel="stylesheet" href="css/style.min.css?_v=20241123044848">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__body">
+					<a href="home.html" class="header__logo"><img src="img/logo-black.svg" alt="logo"></a>
+					<div class="header__actions actions-header">
+						<!-- <a href="#" class="actions-header__user user-actions-header">
+               <div class="user-actions-header__icon _icon-user"></div>
+               <div class="user-actions-header__title">Log in</div>
+            </a> -->
+						<a href="favorites.html" class="actions-header__favourite favourite-actions-header">
+							<div class="favourite-actions-header__icon _icon-favourite"></div>
+							<div class="favourite-actions-header__value"><span>0</span></div>
+						</a>
+						<a href="#" class="actions-header__cart cart-actions-header">
+							<div class="cart-actions-header__icon _icon-cart"></div>
+							<div class="cart-actions-header__value"><span>0</span></div>
+						</a>
+					</div>
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
+					<div class="header__menu menu">
+						<div class="menu__container">
+							<div class="menu__top top-menu">
+								<a href="home.html" class="top-menu__logo"><img src="img/logo-black.svg" alt="logo"></a>
+								<div class="top-menu__languages">
+									<a href="#" class="top-menu__language">ENG</a>
+									<span>/</span>
+									<a href="#" class="top-menu__language">JP</a>
+								</div>
+							</div>
+							<div class="menu__content">
+								<nav class="menu__body">
+									<ul class="menu__list">
+										<li class="menu__item"><a href="catalog.html" class="menu__link">Catalog</a></li>
+										<li class="menu__item"><a href="about.html" class="menu__link">About us</a></li>
+										<li class="menu__item"><a href="#" class="menu__link">User’s manual</a></li>
+										<li class="menu__item"><a href="news.html" class="menu__link">News</a></li>
+										<li class="menu__item"><a href="#" class="menu__link">Contact us</a></li>
+									</ul>
+								</nav>
+								<div class="menu__products products-menu">
+									<div class="products-menu__items">
+										<a href="#" class="products-menu__item item-products-menu">
+											<h2 class="item-products-menu__title">MOVA</h2>
+											<img src="img/header/menu/image_mova.webp" alt="mova image">
+										</a>
+										<a href="#" class="products-menu__item item-products-menu">
+											<h2 class="item-products-menu__title">Honey Badger</h2>
+											<img src="img/header/menu/image_2.webp" alt="image">
+										</a>
+										<a href="#" class="products-menu__item item-products-menu">
+											<h2 class="item-products-menu__title">Artwinery</h2>
+											<img src="img/header/menu/image_3.webp" alt="image">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="page-cart">
+			<div class="page-cart__header header-page-cart">
+				<div class="header-page-cart__container">
+					<nav class="header-page-cart__breadcrumbs breadcrumbs">
+						<ul class="breadcrumbs__list">
+							<li class="breadcrumbs__item">
+								<a href="home.html" class="breadcrumbs__link">Main</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<a href="catalog.html" class="breadcrumbs__link">Catalog</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<span class="breadcrumbs__current">Shopping</span>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<section class="page-cart__hero hero-cart">
+				<div class="hero-cart__container">
+					<div class="hero-cart__body">
+						<div class="hero-cart__content content-cart">
+							<div class="content-cart__details details-content-cart">
+								<h2 class="details-content-cart__title title-cart">Contact details</h2>
+								<form action="files/sendmail/sendmail.php" method="POST" class="details-content-cart__form">
+									<div class="details-content-cart__item">
+										<label for="first-name-cart" class="details-content-cart__label">First name</label>
+										<input id="first-name-cart" type="text" name="first-name-cart" data-error="Error" placeholder="John" class="input">
+									</div>
+									<div class="details-content-cart__item">
+										<label for="last-name-cart" class="details-content-cart__label">Last name</label>
+										<input id="last-name-cart" type="text" name="last-name-cart" data-error="Error" placeholder="Smith" class="input">
+									</div>
+									<div class="details-content-cart__item">
+										<label for="phone-cart" class="details-content-cart__label">Phone</label>
+										<input id="phone-cart" type="number" name="phone-cart" data-error="Error" placeholder="034-6555-5262" class="input">
+									</div>
+									<div class="details-content-cart__item">
+										<label for="email-cart" class="details-content-cart__label">Email</label>
+										<input id="email-cart" type="email" name="email-cart" data-error="Error" placeholder="email@gmail.com" class="input">
+									</div>
+									<div class="details-content-cart__item details-content-cart__item_date">
+										<label for="date-cart" class="details-content-cart__label details-content-cart__label-date">Date of birthday <span>*</span></label>
+										<div class="details-content-cart__label-info">Alcoholic beverages are not sold to people under the age of 20</div>
+										<input id="date-cart" type="date" name="date-cart" data-error="Error" placeholder="1998/04/04" class="input">
+									</div>
+									<!-- <div class="details-content-cart__checkbox checkbox-form-contact">
+                                 <input id="formAgreementDetailsCart" checked required type="checkbox" name="agreement" class="checkbox-form-contact__input">
+                                 <label for="formAgreementDetailsCart" class="checkbox-form-contact__label"><span>I agree to the Privacy Policy</span></label>
+                              </div>
+                              <button type="submit" class="details-content-cart__button button button_red">Continue</button> -->
+								</form>
+							</div>
+							<div class="content-cart__delivery delivery-content-cart">
+								<h2 class="delivery-content-cart__title title-cart">Where to deliver</h2>
+								<form action="files/sendmail/sendmail.php" method="POST" class="delivery-content-cart__form">
+									<div class="delivery-content-cart__item">
+										<label for="region-cart" class="delivery-content-cart__label">Select a region</label>
+										<select id="region-cart" name="region-cart" data-class-modif="cart-item" class="region-cart__select">
+											<option class="region-cart__value" value="" selected>Select region</option>
+											<option class="region-cart__value" value="Region 1">Region 1</option>
+											<option class="region-cart__value" value="Region 2">Region 2</option>
+											<option class="region-cart__value" value="Region 3">Region 3</option>
+											<option class="region-cart__value" value="Region 4">Region 4</option>
+											<option class="region-cart__value" value="Region 5">Region 5</option>
+											<option class="region-cart__value" value="Region 6">Region 6</option>
+											<option class="region-cart__value" value="Region 7">Region 7</option>
+											<option class="region-cart__value" value="Region 8">Region 8</option>
+											<option class="region-cart__value" value="Region 9">Region 9</option>
+											<option class="region-cart__value" value="Region 10">Region 10</option>
+											<option class="region-cart__value" value="Region 11">Region 11</option>
+											<option class="region-cart__value" value="Region 12">Region 12</option>
+										</select>
+									</div>
+									<div class="delivery-content-cart__item">
+										<label for="prefecture-cart" class="delivery-content-cart__label">Prefecture</label>
+										<select id="prefecture-cart" name="prefecture-cart" data-class-modif="cart-item" class="prefecture-cart__select">
+											<option class="prefecture-cart__value" value="" selected>Prefecture</option>
+											<option class="prefecture-cart__value" value="Prefecture 1">Prefecture 1</option>
+											<option class="prefecture-cart__value" value="Prefecture 2">Prefecture 2</option>
+											<option class="prefecture-cart__value" value="Prefecture 3">Prefecture 3</option>
+											<option class="prefecture-cart__value" value="Prefecture 4">Prefecture 4</option>
+											<option class="prefecture-cart__value" value="Prefecture 5">Prefecture 5</option>
+											<option class="prefecture-cart__value" value="Prefecture 6">Prefecture 6</option>
+											<option class="prefecture-cart__value" value="Prefecture 7">Prefecture 7</option>
+											<option class="prefecture-cart__value" value="Prefecture 8">Prefecture 8</option>
+											<option class="prefecture-cart__value" value="Prefecture 9">Prefecture 9</option>
+											<option class="prefecture-cart__value" value="Prefecture 10">Prefecture 10</option>
+											<option class="prefecture-cart__value" value="Prefecture 11">Prefecture 11</option>
+											<option class="prefecture-cart__value" value="Prefecture 12">Prefecture 12</option>
+										</select>
+									</div>
+									<div class="delivery-content-cart__item">
+										<label for="index-cart" class="delivery-content-cart__label">Index</label>
+										<input id="index-cart" type="number" name="index-cart" data-error="Error" placeholder="020444" class="input">
+									</div>
+									<div class="delivery-content-cart__item">
+										<label for="city-cart" class="delivery-content-cart__label">City</label>
+										<input id="city-cart" type="text" name="city-cart" data-error="Error" placeholder="City" class="input">
+									</div>
+									<div class="delivery-content-cart__item">
+										<label for="adress-cart" class="delivery-content-cart__label">Adress</label>
+										<input id="adress-cart" type="text" name="adress-cart" data-error="Error" placeholder="Adress" class="input">
+									</div>
+									<div class="delivery-content-cart__item">
+										<label for="comment-cart" class="delivery-content-cart__label">Commentary</label>
+										<input id="comment-cart" type="text" name="comment-cart" data-error="Error" placeholder="Comment to order" class="input">
+									</div>
+								</form>
+							</div>
+							<div class="content-cart__info">
+								From April to the end of October, we offer a flat rate of 440 yen for cool delivery
+							</div>
+						</div>
+						<div class="hero-cart__basket basket-cart">
+							<h1 class="basket-cart__title title-cart">Shooping cart</h1>
+							<div class="basket-cart__items">
+								<article class="basket-cart__item item-basket-cart">
+									<div class="item-basket-cart__body">
+										<a href="product.html" class="item-basket-cart__image">
+											<img src="img/product-card/image-base.webp" alt="image">
+										</a>
+										<div class="item-basket-cart__content">
+											<a href="product.html" class="item-basket-cart__title-link">
+												<h3 class="item-basket-cart__title">Wine dry white LGC Sheep Dreams Sauvignon Blanc 0,75 liters</h3>
+											</a>
+											<div class="item-basket-cart__availability">Available</div>
+											<div class="item-basket-cart__prices">
+												<div class="item-basket-cart__price"><span>¥15</span> 税込</div>
+												<div class="item-basket-cart__price item-basket-cart__price_old"><span>¥22</span> 税込</div>
+											</div>
+										</div>
+									</div>
+									<div class="item-basket-cart__actions">
+										<div data-quantity class="item-basket-cart__quantity quantity quantity_cart">
+											<button data-quantity-minus type="button" class="quantity__button quantity__button_cart quantity__button_minus"></button>
+											<div class="quantity__input quantity__input_cart">
+												<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+											</div>
+											<button data-quantity-plus type="button" class="quantity__button quantity__button_cart quantity__button_plus"></button>
+										</div>
+										<button type="button" class="item-basket-cart__button button">Delete</button>
+									</div>
+								</article>
+								<article class="basket-cart__item item-basket-cart">
+									<div class="item-basket-cart__body">
+										<a href="product.html" class="item-basket-cart__image">
+											<img src="img/product-card/image-base.webp" alt="image">
+										</a>
+										<div class="item-basket-cart__content">
+											<a href="product.html" class="item-basket-cart__title-link">
+												<h3 class="item-basket-cart__title">Wine dry white LGC Sheep Dreams Sauvignon Blanc 0,75 liters</h3>
+											</a>
+											<div class="item-basket-cart__availability">Available</div>
+											<div class="item-basket-cart__prices">
+												<div class="item-basket-cart__price"><span>¥15</span> 税込</div>
+												<div class="item-basket-cart__price item-basket-cart__price_old"><span>¥22</span> 税込</div>
+											</div>
+										</div>
+									</div>
+									<div class="item-basket-cart__actions">
+										<div data-quantity class="item-basket-cart__quantity quantity quantity_cart">
+											<button data-quantity-minus type="button" class="quantity__button quantity__button_cart quantity__button_minus"></button>
+											<div class="quantity__input quantity__input_cart">
+												<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+											</div>
+											<button data-quantity-plus type="button" class="quantity__button quantity__button_cart quantity__button_plus"></button>
+										</div>
+										<button type="button" class="item-basket-cart__button button">Delete</button>
+									</div>
+								</article>
+							</div>
+							<div class="basket-cart__info info-basket-cart">
+								<div class="info-basket-cart__item item-info-basket-cart">
+									<div class="item-info-basket-cart__title">Product price</div>
+									<div class="item-info-basket-cart__value">¥<span>50</span></div>
+								</div>
+								<div class="info-basket-cart__item item-info-basket-cart">
+									<div class="item-info-basket-cart__title">Discount</div>
+									<div class="item-info-basket-cart__value">¥<span>0</span></div>
+								</div>
+								<div class="info-basket-cart__item item-info-basket-cart">
+									<div class="item-info-basket-cart__title">Delivery</div>
+									<div class="item-info-basket-cart__value">¥<span>0</span></div>
+								</div>
+								<div class="info-basket-cart__item item-info-basket-cart">
+									<div class="item-info-basket-cart__checkbox checkbox-info-basket-cart">
+										<input id="formGiftBox" type="checkbox" name=.webpt-box" class="checkbox-info-basket-cart__input">
+										<label for="formGiftBox" class="checkbox-info-basket-cart__label"><span>Gift Box</span></label>
+									</div>
+									<div class="item-info-basket-cart__value">¥<span>5</span></div>
+								</div>
+								<div class="info-basket-cart__tax">Tax Include <span></span></div>
+							</div>
+							<div class="basket-cart__promo promo-basket-cart">
+								<label for="promo-cart" class="promo-basket-cart__value">Promocode</label>
+								<input id="promo-cart" type="text" name="promo-cart" data-error="Error" placeholder="44414214" class="promo-basket-cart__input input">
+							</div>
+							<div class="basket-cart__checkbox checkbox-form-contact">
+								<input id="formAgreementCart" checked required type="checkbox" name="agreement" class="checkbox-form-contact__input">
+								<label for="formAgreementCart" class="checkbox-form-contact__label"><span>I agree to the Privacy Policy</span></label>
+							</div>
+							<div class="basket-cart__actions">
+								<a href="catalog.html" class="basket-cart__button button"><span>Go to Catalog</span></a>
+								<a href="#" class="basket-cart__button basket-cart__button_red button button_red"><span class="basket-cart__button-label">Purchase</span> <span class="basket-cart__button-value">¥55 税込</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__body">
+					<div class="footer__banner banner-footer">
+						<div class="banner-footer__body">
+							<div class="banner-footer__text">Be the first to know about new products and sales – sign up today</div>
+							<form action="files/sendmail/sendmail.php" method="POST" class="banner-footer__form form-banner-footer">
+								<input type="email" name="email-footer" data-required placeholder="Email" class="form-banner-footer__input input">
+								<button type="submit" class="form-banner-footer__button _icon-mail"><span>Subscribe</span></button>
+							</form>
+							<img src="img/footer/arrow-footer.webp" alt="arrow" class="banner-footer__icon">
+						</div>
+					</div>
+					<div class="footer__content content-footer">
+						<div class="content-footer__columms">
+							<div class="content-footer__column content-footer__column_1">
+								<div class="content-footer__work-mode">
+									<p>Work mode</p>
+									<p>Mon-Fri. 9:00-21:00</p>
+									<p>Sat. 10:00-18:00</p>
+								</div>
+							</div>
+							<div class="content-footer__column content-footer__column_2">
+								<nav class="content-footer__menu menu-footer">
+									<div class="menu-footer__columns">
+										<div class="menu-footer__column menu-footer__column_1">
+											<ul class="menu-footer__list menu-footer__list_1">
+												<li class="menu-footer__item"><a href="#" class="menu-footer__link">About us</a></li>
+												<li class="menu-footer__item"><a href="#" class="menu-footer__link">News</a></li>
+												<li class="menu-footer__item"><a href="#" class="menu-footer__link">Contact us</a></li>
+											</ul>
+										</div>
+										<div class="menu-footer__column menu-footer__column_2">
+											<ul class="menu-footer__list menu-footer__list_2">
+												<li class="menu-footer__item"><a href="#" class="menu-footer__link">ARTWINERY</a></li>
+												<li class="menu-footer__item"><a href="#" class="menu-footer__link">MOVA</a></li>
+												<li class="menu-footer__item"><a href="#" class="menu-footer__link">HONEY BADGER</a></li>
+											</ul>
+										</div>
+										<div class="menu-footer__column menu-footer__column_3">
+											<ul data-da=".menu-footer__column_1, 450, 1" class="menu-footer__list menu-footer__list_3">
+												<li class="menu-footer__item"><a href="#" class="menu-footer__link">User's manual</a></li>
+												<li class="menu-footer__item"><a href="#" class="menu-footer__link">Terms of delivery</a></li>
+												<li class="menu-footer__item"><a href="#" class="menu-footer__link">Payment methods</a></li>
+												<li class="menu-footer__item"><a href="#" class="menu-footer__link">Return of goods</a></li>
+											</ul>
+										</div>
+									</div>
+								</nav>
+							</div>
+							<div class="content-footer__column content-footer__column_3">
+								<div data-da=".content-footer__column_1, 991.98, 1" class="content-footer__contacts contacts-footer">
+									<a href="tel:+81256222221" class="contacts-footer__item">+81 256 222 221</a>
+									<a href="mailto:email@gmail.com" class="contacts-footer__item">email@gmail.com</a>
+									<a href="#" class="contacts-footer__item">Japan, Tokyo, str</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="footer__bottom bottom-footer">
+						<div class="bottom-footer__copy">© Copyright 2024. UMI GROUP LLC. All Rights Reserved</div>
+						<div class="bottom-footer__rules">
+							<a href="#" class="bottom-footer__terms">Terms & Conditins</a>
+							<a href="#" class="bottom-footer__transactions">Specific commercial transactions</a>
+							<a href="#" data-da=".bottom-footer__rules, 767.98, 1" class="bottom-footer__policy">Privacy Policy</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<div id="popup-age" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M17.2059 0.379409C17.5588 0.737339 17.5588 1.31765 17.2059 1.67559L2.2447 16.8485C1.89176 17.2064 1.31954 17.2064 0.966606 16.8485C0.61367 16.4905 0.61367 15.9103 0.966606 15.5523L15.9278 0.37941C16.2807 0.0214796 16.853 0.0214793 17.2059 0.379409Z" fill="#072440" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M0.793999 0.366104C0.441063 0.724034 0.441063 1.30435 0.793999 1.66229L15.7552 16.8352C16.1082 17.1931 16.6804 17.1931 17.0333 16.8352C17.3862 16.4772 17.3862 15.8969 17.0333 15.539L2.0721 0.366104C1.71916 0.00817387 1.14694 0.00817362 0.793999 0.366104Z" fill="#072440" />
+					</svg>
+				</button>
+				<div class="popup__body body-popup">
+					<div class="body-popup__image">
+						<img src="img/popups/age/image.svg" alt="image">
+					</div>
+					<h2 class="body-popup__title">Are you over 20 years old?</h2>
+					<div class="body-popup__actions">
+						<button id="check-age-no" class="body-popup__btn button button_popup"><span>No</span></button>
+						<a href="#" id="check-age-yes" class="body-popup__btn button button_popup button_popup_red"><span>Yes</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="popup-purchase" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M17.2059 0.379409C17.5588 0.737339 17.5588 1.31765 17.2059 1.67559L2.2447 16.8485C1.89176 17.2064 1.31954 17.2064 0.966606 16.8485C0.61367 16.4905 0.61367 15.9103 0.966606 15.5523L15.9278 0.37941C16.2807 0.0214796 16.853 0.0214793 17.2059 0.379409Z" fill="#072440" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M0.793999 0.366104C0.441063 0.724034 0.441063 1.30435 0.793999 1.66229L15.7552 16.8352C16.1082 17.1931 16.6804 17.1931 17.0333 16.8352C17.3862 16.4772 17.3862 15.8969 17.0333 15.539L2.0721 0.366104C1.71916 0.00817387 1.14694 0.00817362 0.793999 0.366104Z" fill="#072440" />
+					</svg>
+				</button>
+				<div class="popup__body body-popup">
+					<div class="body-popup__image">
+						<img src="img/popups/purchase/image.svg" alt="image">
+					</div>
+					<h2 class="body-popup__title body-popup__title_purchase">Thank you for your purchase. The letter with detailed information was sent to your e-mail</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="popup-contact" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M17.2059 0.379409C17.5588 0.737339 17.5588 1.31765 17.2059 1.67559L2.2447 16.8485C1.89176 17.2064 1.31954 17.2064 0.966606 16.8485C0.61367 16.4905 0.61367 15.9103 0.966606 15.5523L15.9278 0.37941C16.2807 0.0214796 16.853 0.0214793 17.2059 0.379409Z" fill="#072440" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M0.793999 0.366104C0.441063 0.724034 0.441063 1.30435 0.793999 1.66229L15.7552 16.8352C16.1082 17.1931 16.6804 17.1931 17.0333 16.8352C17.3862 16.4772 17.3862 15.8969 17.0333 15.539L2.0721 0.366104C1.71916 0.00817387 1.14694 0.00817362 0.793999 0.366104Z" fill="#072440" />
+					</svg>
+				</button>
+				<div class="popup__body body-popup">
+					<div class="body-popup__image">
+						<img src="img/popups/contact/image.svg" alt="image">
+					</div>
+					<h2 class="body-popup__title body-popup__title_contact">Thank you for contacting the UMI online store</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="popup-review" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content popup__content_review">
+				<button data-close type="button" class="popup__close">
+					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M17.2059 0.379409C17.5588 0.737339 17.5588 1.31765 17.2059 1.67559L2.2447 16.8485C1.89176 17.2064 1.31954 17.2064 0.966606 16.8485C0.61367 16.4905 0.61367 15.9103 0.966606 15.5523L15.9278 0.37941C16.2807 0.0214796 16.853 0.0214793 17.2059 0.379409Z" fill="#072440" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M0.793999 0.366104C0.441063 0.724034 0.441063 1.30435 0.793999 1.66229L15.7552 16.8352C16.1082 17.1931 16.6804 17.1931 17.0333 16.8352C17.3862 16.4772 17.3862 15.8969 17.0333 15.539L2.0721 0.366104C1.71916 0.00817387 1.14694 0.00817362 0.793999 0.366104Z" fill="#072440" />
+					</svg>
+				</button>
+				<div class="popup__body body-popup body-popup_review">
+					<h2 class="body-popup__title body-popup__title_review">Your review</h2>
+					<form data-dev action="files/sendmail/sendmail.php" method="POST" class="body-popup__form form-popup">
+						<div class="form-popup__items">
+							<div class="form-popup__item">
+								<label for="form-popup-name" class="form-popup__label">Name*</label>
+								<input type="text" id="form-popup-name" name="popup-name" data-required data-error="Please fill in these fields" placeholder="John Smith" class="form-popup__input input">
+							</div>
+							<div class="form-popup__item">
+								<label for="form-popup-email" class="form-popup__label">Email*</label>
+								<input type="email" id="form-popup-email" name="popup-email" data-required data-error="Please fill in these fields" placeholder="email@gmail.com" class="form-popup__input input">
+							</div>
+							<div class="form-popup__item">
+								<label for="form-popup-phone" class="form-popup__label">Phone*</label>
+								<input type="number" id="form-popup-phone" name="popup-phone" data-required data-error="Please fill in these fields" placeholder="03-6555-5262" class="form-popup__input input">
+							</div>
+							<div class="form-popup__item form-popup__item_message">
+								<label for="form-popup-message" class="form-popup__label">Message*</label>
+								<textarea autocomplete="off" id="form-popup-message" name="popup-message" placeholder="Message" data-required data-error="Please fill in these fields" class="form-popup__input input"></textarea>
+							</div>
+						</div>
+						<div class="form-popup__actions">
+							<button type="button" data-close class="form-popup__button form-popup__button_back button"><span>Back</span></button>
+							<button type="submit" class="form-popup__button button form-popup__button_submit _icon-arrow"><span>Submit</span></button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div data-popup="#popup-age"></div>
+	<script src="js/app.min.js?_v=20241123044848"></script>
+</body>
+
+</html>
